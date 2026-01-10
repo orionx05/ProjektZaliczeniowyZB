@@ -1,11 +1,23 @@
 ---
-title: "Home"
+title: "Strona Główna"
 site: workflowr::wflow_site
 output:
   workflowr::wflow_html:
     toc: false
-editor_options:
-  chunk_output_type: console
 ---
 
-Welcome to my research website.
+## Witaj na mojej stronie!
+
+Nazywam się **Zuzanna Bugajska** i jestem studentką kierunku **Informatyka i Inżynieria Danych** na Uniwersytecie Przyrodniczym.
+
+
+### O uczelni
+
+Studiuję na Uniwersytecie Przyrodniczym w Poznaniu. 
+
+Poniżej zdjęcie uczelni:
+![Budynek UPP](https://upload.wikimedia.org/wikipedia/commons/f/f8/UP_Poznan.jpg)
+
+### Informacje techniczne
+
+Ta strona została wygenerowana przy użyciu pakietu **workflowr**, co zapewnia reprodukowalność kodu i wyników.

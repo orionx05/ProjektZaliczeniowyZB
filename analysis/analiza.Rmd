@@ -1,0 +1,114 @@
+---
+title: "Analiza danych"
+output:
+  workflowr::wflow_html:
+    code_folding: show
+---
+
+## Wstęp
+Do analizy wybrałam zbiór danych `diamonds` z pakietu `ggplot2`.
+Oryginalny zbiór jest bardzo duży, dlatego do analizy wylosowałam próbkę **1000 diamentów**.
+
+Co będę badać?
+
+1.  Czy większy diament (więcej karatów) zawsze oznacza wyższą cenę?
+2.  Jak jakość szlifu wpływa na wartość kamienia?
+
+## 1. Ładowanie pakietów
+
+```{r message=FALSE, warning=FALSE}
+library(tidyverse)
+library(ggplot2)
+```
+
+## 2. Przygotowanie danych (dplyr)
+
+Zbiór zawiera takie zmienne jak: `carat` (waga), `cut` (jakość szlifu), `color` (kolor) i `price` (cena).
+
+Co zrobiłam po kolei?
+1.  **Sample**: Wylosowałam 1000 diamentów, aby zbiór był mniejszy i bardziej czytelny.
+2.  **Select**: Wybrałam tylko 4 najważniejsze kolumny.
+3.  **Filter**: Usunęłam diamenty droższe niż 15,000$.
+
+```{r}
+data(diamonds)
+
+set.seed(123) #ziarno losowosci dla powtarzalnosci wyników
+
+diamenty <- diamonds %>%
+  sample_n(1000) %>%                           #losowanie 1000 sztuk
+  select(price, carat, cut, color) %>%         #wybranie cech, które potrzebuje
+  filter(price < 15000) %>%                    #filtrowanie danych na podstawie ceny
+  arrange(desc(price))                         #sortowanie od najdroższego
+
+head(diamenty)
+```
+
+## 3. Statystyki
+
+Sprawdźmy średnią cenę diamentu w zależności od jakości jego szlifu (Cut).
+Jakość szlifu oceniana jest od "Fair" (Słaba) do "Ideal" (Idealna).
+
+```{r}
+tabela_cen <- diamenty %>%
+  group_by(cut) %>%
+  summarise(
+    Srednia_Cena = mean(price),
+    Srednia_Wielkosc = mean(carat),
+    Liczba_Sztuk = n()
+  ) %>%
+  arrange(desc(Srednia_Cena))
+
+tabela_cen
+```
+
+
+## 4. Wizualizacje
+
+### Wykres 1: Cena a Wielkość (Scatter plot)
+
+Tutaj zobaczymy, jak bardzo cena rośnie wraz z wielkością kamienia.
+
+```{r}
+ggplot(diamenty, aes(x = carat, y = price, color = cut)) +
+  geom_point(alpha = 0.7, size = 2) +
+  labs(
+    title = "Zależność ceny od wielkości (karaty)",
+    subtitle = "Większe kamienie są droższe (korelacja dodatnia)",
+    x = "Wielkość (karaty)",
+    y = "Cena (USD)",
+    color = "Jakość szlifu"
+  ) +
+  theme_minimal()
+```
+**Komentarz:** Widać, że małe diamenty są tanie, ale po przekroczeniu 1 karata ich cena znacznie wzrasta w górę.
+
+### Wykres 2: Który szlif jest najczęstszy? (Bar plot)
+
+```{r}
+ggplot(diamenty, aes(x = cut, fill = cut)) +
+  geom_bar() +
+  labs(
+    title = "Liczebność diamentów wg jakości szlifu",
+    x = "Jakość szlifu",
+    y = "Liczba diamentów"
+  ) +
+  theme_light()
+```
+**Komentarz:** Najwięcej w wybranym zbiorze jest diamentów o szlifie "Ideal" oraz "Premium". Najrzadziej pojawiają się te o szlifie "Fair" (najgorszym).
+
+### Wykres 3: Rozkład cen (Histogram)
+
+Sprawdzę, ile najczęściej kosztują diamenty w wybranej próbce.
+
+```{r}
+ggplot(diamenty, aes(x = price)) +
+  geom_histogram(binwidth = 500, fill = "purple", color = "white") +
+  labs(
+    title = "Rozkład cen diamentów",
+    x = "Cena (USD)",
+    y = "Liczebność"
+  ) +
+  theme_classic()
+```
+**Komentarz:**  Najwięcej jest tanich diamentów (poniżej 2500$), a drogie kamienie zdarzają się rzadziej.

@@ -1,0 +1,61 @@
+---
+title: "Moje CV"
+output:
+  workflowr::wflow_html:
+    toc: true
+    toc_float: true
+---
+
+## Dane osobowe
+
+* **Imię i Nazwisko:** Zuzanna Bugajska
+* **Adres e-mail:** student@uczelnia.pl
+* **Status:** Studentka Informatyki i Inżynierii Danych
+
+---
+
+## Wykształcenie
+
+**Uniwersytet Przyrodniczy w Poznaniu** | Poznań
+*Kierunek: Informatyka i Inżynieria Danych* | 2023 – obecnie
+
+* Aktywny udział w projektach studenckich.
+
+**I Liceum Ogólnokształcące** | Prudnik
+*Profil matematyczno-fizyczny* | 2019 – 2023
+
+---
+
+## Umiejętności
+
+### Języki programowania
+* **Średniozaawansowane:** Python, SQL, C++, C#
+* **Podstawy:** R (analiza danych, wizualizacja)
+
+### Narzędzia i Technologie
+* **Środowiska:** RStudio, Visual Studio Code
+* **Kontrola wersji:** Git, GitHub
+* **Inne:** MS Excel
+
+### Języki obce
+* **Angielski:** Poziom B2 (Średniozaawansowany)
+
+---
+
+## Doświadczenie i Projekty
+
+### Doświadczenie zawodowe
+
+**Praktyki studenckie** | Firma XYZ | Lipiec 2023
+
+* Analiza prostych zbiorów danych.
+* Przygotowywanie raportów i zestawień.
+* Szukanie błędów w zbiorach danych w Excel.
+
+### Projekty akademickie
+
+**Projekty realizowane na studiach:**
+
+* Projekt zaliczeniowy z przedmiotu Programowanie w R.
+* Projekt gry "Space Invaders".
+* Projekt strony internetowej.
