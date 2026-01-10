@@ -26,6 +26,7 @@ library(ggplot2)
 Zbiór zawiera takie zmienne jak: `carat` (waga), `cut` (jakość szlifu), `color` (kolor) i `price` (cena).
 
 Co zrobiłam po kolei?
+
 1.  **Sample**: Wylosowałam 1000 diamentów, aby zbiór był mniejszy i bardziej czytelny.
 2.  **Select**: Wybrałam tylko 4 najważniejsze kolumny.
 3.  **Filter**: Usunęłam diamenty droższe niż 15,000$.
