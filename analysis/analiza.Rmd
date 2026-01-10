@@ -29,6 +29,8 @@ Co zrobiłam po kolei?
 1.  **Sample**: Wylosowałam 1000 diamentów, aby zbiór był mniejszy i bardziej czytelny.
 2.  **Select**: Wybrałam tylko 4 najważniejsze kolumny.
 3.  **Filter**: Usunęłam diamenty droższe niż 15,000$.
+4.  **Mutate**: Stworzyłam nową kolumnę `cena_za_karat` (cena podzielona przez wagę).
+5.  **Arrange**: Posortowałam dane malejąco według ceny.
 
 ```{r}
 data(diamonds)
@@ -38,7 +40,8 @@ set.seed(123) #ziarno losowosci dla powtarzalnosci wyników
 diamenty <- diamonds %>%
   sample_n(1000) %>%                           #losowanie 1000 sztuk
   select(price, carat, cut, color) %>%         #wybranie cech, które potrzebuje
-  filter(price < 15000) %>%                    #filtrowanie danych na podstawie ceny
+  filter(price < 15000) %>%
+  mutate(cena_za_karat = price / carat) %>%    #filtrowanie danych na podstawie ceny
   arrange(desc(price))                         #sortowanie od najdroższego
 
 head(diamenty)
