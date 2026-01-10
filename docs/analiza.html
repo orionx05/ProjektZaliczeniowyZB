@@ -524,15 +524,15 @@ project makes it easier to run your code on other machines.</p>
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomorionx05ProjektZaliczeniowyZBtree75ac752b0753a3fa6c3152ebd536856ac000a81ftargetblank75ac752a">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomorionx05ProjektZaliczeniowyZBtreedbf5d0d1c646ac1790f203b07af53fbd4bfcb692targetblankdbf5d0da">
 <span class="glyphicon glyphicon-ok text-success"
 aria-hidden="true"></span> <strong>Repository version:</strong>
-<a href="https://github.com/orionx05/ProjektZaliczeniowyZB/tree/75ac752b0753a3fa6c3152ebd536856ac000a81f" target="_blank">75ac752</a>
+<a href="https://github.com/orionx05/ProjektZaliczeniowyZB/tree/dbf5d0d1c646ac1790f203b07af53fbd4bfcb692" target="_blank">dbf5d0d</a>
 </a>
 </p>
 </div>
 <div
-id="strongRepositoryversionstrongahrefhttpsgithubcomorionx05ProjektZaliczeniowyZBtree75ac752b0753a3fa6c3152ebd536856ac000a81ftargetblank75ac752a"
+id="strongRepositoryversionstrongahrefhttpsgithubcomorionx05ProjektZaliczeniowyZBtreedbf5d0d1c646ac1790f203b07af53fbd4bfcb692targetblankdbf5d0da"
 class="panel-collapse collapse">
 <div class="panel-body">
 <p>
@@ -542,7 +542,7 @@ reproducibility.
 </p>
 <p>
 The results in this page were generated with repository version
-<a href="https://github.com/orionx05/ProjektZaliczeniowyZB/tree/75ac752b0753a3fa6c3152ebd536856ac000a81f" target="_blank">75ac752</a>.
+<a href="https://github.com/orionx05/ProjektZaliczeniowyZB/tree/dbf5d0d1c646ac1790f203b07af53fbd4bfcb692" target="_blank">dbf5d0d</a>.
 See the <em>Past versions</em> tab to see a history of the changes made
 to the R Markdown and HTML files.
 </p>
@@ -603,6 +603,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/orionx05/ProjektZaliczeniowyZB/blob/dbf5d0d1c646ac1790f203b07af53fbd4bfcb692/analysis/analiza.Rmd" target="_blank">dbf5d0d</a>
+</td>
+<td>
+Zuzanna Bugajska
+</td>
+<td>
+2026-01-10
+</td>
+<td>
+Poprawka do analizy
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/orionx05/ProjektZaliczeniowyZB/e0826539c68a445b7664dbd1d274b94bc2caa579/docs/analiza.html" target="_blank">e082653</a>
+</td>
+<td>
+Zuzanna Bugajska
+</td>
+<td>
+2026-01-10
+</td>
+<td>
+Build site.
+</td>
+</tr>
 <tr>
 <td>
 Rmd
@@ -700,13 +734,18 @@ library(ggplot2)</code></pre>
 <p>Zbiór zawiera takie zmienne jak: <code>carat</code> (waga),
 <code>cut</code> (jakość szlifu), <code>color</code> (kolor) i
 <code>price</code> (cena).</p>
-<p>Co zrobiłam po kolei? 1. <strong>Sample</strong>: Wylosowałam 1000
-diamentów, aby zbiór był mniejszy i bardziej czytelny. 2.
-<strong>Select</strong>: Wybrałam tylko 4 najważniejsze kolumny. 3.
-<strong>Filter</strong>: Usunęłam diamenty droższe niż 15,000$. 4.
-<strong>Mutate</strong>: Stworzyłam nową kolumnę
-<code>cena_za_karat</code> (cena podzielona przez wagę). 5.
-<strong>Arrange</strong>: Posortowałam dane malejąco według ceny.</p>
+<p>Co zrobiłam po kolei?</p>
+<ol style="list-style-type: decimal">
+<li><strong>Sample</strong>: Wylosowałam 1000 diamentów, aby zbiór był
+mniejszy i bardziej czytelny.</li>
+<li><strong>Select</strong>: Wybrałam tylko 4 najważniejsze
+kolumny.</li>
+<li><strong>Filter</strong>: Usunęłam diamenty droższe niż 15,000$.</li>
+<li><strong>Mutate</strong>: Stworzyłam nową kolumnę
+<code>cena_za_karat</code> (cena podzielona przez wagę).</li>
+<li><strong>Arrange</strong>: Posortowałam dane malejąco według
+ceny.</li>
+</ol>
 <pre class="r"><code>data(diamonds)
 
 set.seed(123) #ziarno losowosci dla powtarzalnosci wyników
