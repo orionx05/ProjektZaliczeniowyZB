@@ -78,7 +78,6 @@ ggplot(diamenty, aes(x = carat, y = price, color = cut)) +
   geom_point(alpha = 0.7, size = 2) +
   labs(
     title = "Zależność ceny od wielkości (karaty)",
-    subtitle = "Większe kamienie są droższe (korelacja dodatnia)",
     x = "Wielkość (karaty)",
     y = "Cena (USD)",
     color = "Jakość szlifu"
